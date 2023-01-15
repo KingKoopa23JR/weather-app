@@ -27,6 +27,9 @@ function App() {
       setWeather(results);
     }
   };
+
+  
+
   //when routing try putting lat and lon through URL params and calling API on new page
   return (
     <div className="App">
@@ -38,10 +41,10 @@ function App() {
         onChange={(e) => setQuery(e.target.value)}
         onKeyUp={search}
       ></input>
-      
+
       {weather.length !== 0 &&
         weather.map((weather) => (
-          <div className="card" key={weather.data.id}>
+          <div id="flipper" className="card" key={weather.data.id}>
             <Container
               name={weather.data.name}
               country={weather.data.sys.country}

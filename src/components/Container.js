@@ -1,16 +1,19 @@
 import "./Components.css";
 
-import Location from "./Location";
-import Temperature from "./Temperature";
-import WeatherInfo from "./WeatherInfo";
+import FrontCard from "./FrontCard";
+import BackCard from "./BackCard";
+
 function Container(props) {
   const { name, country, temp, icon, description } = props;
 
+  const cardClick = event => {
+    event.currentTarget.classList.toggle('card-flip');
+  }
+
   return (
-    <div className="card">
-      <Location name={name} country={country} />
-      <Temperature temp={temp} />
-      <WeatherInfo icon={icon} description={description} />
+    <div className="inner-card" onClick={cardClick}>
+        <FrontCard name={name} country={country} icon={icon} description={description}/>
+        <BackCard temp={temp}/>
     </div>
   );
 }
