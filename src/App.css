@@ -11,7 +11,7 @@
  }
  
  .search:focus {
-  outline-color: #124e14;
+  outline-color: #2f437f;
   background: #e3e3e3;
   transition: 0.3s;
  }
@@ -25,6 +25,12 @@
   border-radius: 12px;
   width: 18rem;
   height: 12rem;
+  transition: 1s;
+}
+
+.expand{
+  height: 35rem;
+  width: 35rem;
 
 }
 

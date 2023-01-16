@@ -9,6 +9,7 @@ function App() {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState([]);
 
+  //If wanted multiple results but sometimes weather API has hard time with lat and lon
   const getResults = async (res) => {
     const results = [];
 
@@ -19,18 +20,18 @@ function App() {
   };
 
   const search = async (e) => {
-    //that is calling via an await function the query that is passed
     if (e.key === "Enter") {
       const coordinateData = await getCoordinates(query);
-      const results = await getResults(coordinateData.data);
+      console.log(coordinateData);
+      const results = await getResults(coordinateData.data.features);
       setQuery("");
       setWeather(results);
+      console.log(results);
     }
   };
 
   
 
-  //when routing try putting lat and lon through URL params and calling API on new page
   return (
     <div className="App">
       <input
@@ -48,9 +49,19 @@ function App() {
             <Container
               name={weather.data.name}
               country={weather.data.sys.country}
+              sunrise={weather.data.sys.sunrise}
+              sunset={weather.data.sys.sunset}
+              lon={weather.data.coord.lon}
+              lat={weather.data.coord.lat}
               temp={weather.data.main.temp}
-              icon={weather.data.weather.icon}
-              description={weather.data.weather.description}
+              humidity={weather.data.main.humidity}
+              feel={weather.data.main.feels_like}
+              max={weather.data.main.temp_max}
+              min={weather.data.main.temp_min}
+              weather={weather.data.weather[0].main}
+              icon={weather.data.weather[0].icon}
+              description={weather.data.weather[0].description}
+              clouds= {weather.data.clouds.all}
             />
           </div>
         ))}

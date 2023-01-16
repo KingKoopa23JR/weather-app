@@ -3,7 +3,7 @@
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.6s;
+    transition: transform 1s;
     transform-style: preserve-3d;
   }
 
@@ -17,8 +17,6 @@
     box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
     position: absolute;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden;
@@ -28,14 +26,12 @@
   }
   
   .flip-card-front {
-    background: linear-gradient(120deg, #ffcccc 60%, rgb(170 46 46) 88%, rgb(161 49 49) 40%, rgb(137 30 30) 48%);
+    background: linear-gradient(120deg, #f6d2ce  60%, #ff9c93  88%, #f88379 40%);
     color: #ff6363;
-    color: coral;
-
   }
   
   .flip-card-back {
-    background: linear-gradient(120deg, rgb(103 177 157) 30%, rgb(18 78 20) 88%, rgb(83 202 121) 40%, rgb(12 47 23) 78%);
+    background: linear-gradient(120deg, #daf8ff 30%, #65cbfb 88%);
     color: white;
     transform: rotateY(180deg);
     box-shadow: 0 8px 14px 0 rgba(0,0,0,0.8);
@@ -50,24 +46,19 @@
     bottom: 2rem;
 }
 
-p {
-    margin-top: 10px;
+.city-temp p, 
+.l-info{
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    color: #1e2432;
 }
 
 .city-temp {
-    bottom: 5rem;
-    left: 1rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #1e2432;
-    text-align: center;
-    position: relative;
-}
+    left: 0;
+    text-align: left;
+  }
 
-.city sup {
+.city sup,
+.location sup {
     font-size: 0.5em;
 }
 
@@ -77,12 +68,64 @@ p {
 }
 
 .city-name sup {
-    padding: 0.2em 0.6em;
-    margin-left: 0.2em;
-    border-radius: 30px;
     color: #fff;
     background: #ff8c00;
 }
+
+.l-info,
+.city-temp {
+  box-shadow: 0 8px 14px 0 #a5e2ff;
+  padding: 10px;
+  height: 40%;
+  border-radius: 10px;
+}
+
+.location sup {
+  color: #5d5d5d;
+  background: #e1f3ff;
+}
+
+.location span {
+  color: #1d9690;
+}
+
+.city-name sup,
+.location sup {
+  padding: 0.2em 0.6em;
+  margin-left: 0.2em;
+  border-radius: 30px;
+
+}
+
+.sunrise {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.sunset {
+  margin-bottom: 0;
+  margin-top: 1px;
+}
+
+.rise,
+.set {
+  position: relative;
+  left: 1rem;
+  top: 0.5rem;
+  transform: translate(-50%, -50%);
+  height: 1rem;
+  width: 2rem;
+  background: linear-gradient(120deg, #ff8400 30%, #ffdc8c 88%);
+}
+
+.rise{
+  border-radius: 150px 150px 0 0;
+}
+
+.set {  
+  border-radius: 0 0 150px 150px;
+}
+
 
 .city-icon {
     margin-top: 10px;
@@ -94,5 +137,13 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.l-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
 }
 
