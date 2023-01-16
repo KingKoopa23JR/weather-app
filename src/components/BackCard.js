@@ -2,6 +2,8 @@ import "./Components.css";
 
 import Temperature from "./Temperature";
 import LocationInfo from "./LocationInfo";
+import WeatherStatus from "./WeatherStatus";
+
 
 function BackCard(props) {
   const {
@@ -30,6 +32,8 @@ function BackCard(props) {
         min={min}
       />
       <LocationInfo name={name} country={country} sunrise={sunrise} sunset={sunset}/>
+
+      <WeatherStatus icon={icon} weather={weather} description={description} clouds={clouds} />
     </div>
   );
 }

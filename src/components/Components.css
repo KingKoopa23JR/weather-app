@@ -26,7 +26,7 @@
   }
   
   .flip-card-front {
-    background: linear-gradient(120deg, #f6d2ce  60%, #ff9c93  88%, #f88379 40%);
+    background: linear-gradient(rgb(145, 235, 255), rgb(255, 165, 48));
     color: #ff6363;
   }
   
@@ -47,13 +47,15 @@
 }
 
 .city-temp p, 
-.l-info{
+.l-info,
+.info{
     text-transform: uppercase;
     color: #1e2432;
 }
 
 .city-temp {
-    left: 0;
+  position: absolute;
+    left: 15px;
     text-align: left;
   }
 
@@ -73,8 +75,10 @@
 }
 
 .l-info,
-.city-temp {
-  box-shadow: 0 8px 14px 0 #a5e2ff;
+.city-temp,
+.info {
+  background: #ebf6fca9;
+  box-shadow: 0 8px 14px 0 #dbf1fb;
   padding: 10px;
   height: 40%;
   border-radius: 10px;
@@ -135,12 +139,19 @@
 
 .info {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    width: 80%;
+
 }
 
 .l-info {
   display: flex;
+  position: absolute;
+  right: 15px;
   flex-direction: column;
   align-items: center;
   width: 60%;

@@ -1,5 +1,17 @@
+body,
+html{
+  width: 100%;
+  height: 100%;
+  -webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
+}
+
 .App {
   text-align: center;
+  width: 100%;
+  height: 100vh;
 }
 
 .search {
@@ -31,6 +43,17 @@
 .expand{
   height: 35rem;
   width: 35rem;
+
+}
+
+.dawn {
+  background: linear-gradient(rgb(145, 235, 255), rgb(255, 165, 48));
+
+}
+
+.day{
+  background: linear-gradient(120deg, #daf8ff 30%, #65cbfb 88%);
+
 
 }
 

@@ -33,7 +33,7 @@ function App() {
   
 
   return (
-    <div className="App">
+    <div className="App dawn">
       <input
         type="text"
         className="search"

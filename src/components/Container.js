@@ -25,6 +25,16 @@ function Container(props) {
   const cardClick = (event) => {
     event.currentTarget.classList.toggle("card-flip");
     document.querySelector("#flipper").classList.toggle("expand");
+    const app = document.querySelector(".App")
+
+    if(app.classList.contains("dawn")){
+      app.classList.remove("dawn");
+      app.classList.add("day");
+    }
+    else{
+      app.classList.remove("day");
+      app.classList.add("dawn");
+    }
   };
 
   return (
